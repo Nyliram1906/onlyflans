@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% extends 'base.html' %}
+
+    {% block 'content' %}
+    <div class="container">
+
+        <div class="row">
+            <div class="col">
+                <div class="h-100 p-5 text-white bg-dark rounded-3">
+
+                    <h2>
+                        Nuestros productos
+                    </h2>
+                    <p>
+                        Onlyflans nace en el año 2021 buscandoi entregar flanes de calidad.
+                    </p>
+                    <a href="{% url 'acerca' %}" class="btn btn-outline-light">
+                        Conoce más
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+
+            <div class="row">
+
+                {% for flan in public_flans %}
+                <div class="col-6 col-md-3">
+                    <div class="card mb-4" style="">
+                        <img src="{{ flan.image_url }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                {{ flan.name }}
+                            </h5>
+                            <p class="card text">
+                                {{ flan.description }}
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        {% endblock %}
+
+</body>
+
+</html>
