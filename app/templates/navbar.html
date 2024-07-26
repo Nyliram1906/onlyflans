@@ -27,13 +27,20 @@
                     </a>
                   </li>
                   <li class="nav-item">
+                    <a class="nav-link" href="{% url 'ubicacion' %}">
+                      Encuentranos
+                    </a>
+                  </li>
+                  </li>
+                  <li class="nav-item">
                     <a class="nav-link" href="{% url 'contacto' %}">
                       Contacto
                     </a>
                   </li>
+
                   {% if not user.is_authenticated %}
                   <li class="nav-item">
-                    <a class="nav-link btn btn-secondary text white" href="{% url 'login' %}">
+                    <a class="nav-link active btn btn-secondary text-white" href="{% url 'login' %}">
                       Iniciar Sesión
                     </a>
                   </li>
@@ -41,7 +48,7 @@
 
                   {% if user.is_authenticated %}
                   <li class="nav-item">
-                    <a class="nav-link btn btn-secondary text white" href="{% url 'contacto' %}">
+                    <a class="nav-link active btn btn-secondary text-white" href="{% url 'logout' %}">
                       Cerrar Sesión
                     </a>
                   </li>

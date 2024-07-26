@@ -18,7 +18,7 @@
                 <div class="h-100 p-5 text-white bg-dark rounded-3">
 
                     <h2>
-                        Bienvenido usuario
+                        Bienvenido {{user.get_username}}
                     </h2>
                     <p>
                         Tenemos una lista de productos exclusivos para ti. ¿Quieres conocer mas?
@@ -32,10 +32,10 @@
 
     <div class="container">
 
-        <div class="row">
+        <div class="row mt-4 mb-4">
             {% for flan in private_flans %}
-            <div class="col-6 col-md-3">
-                <div class="card mb-4" style="">
+            <!-- <div class="col-6 col-md-3"> -->
+                <div class="card mb-2" style="width: 18rem;">
                     <img src="{{ flan.image_url }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">
@@ -46,8 +46,8 @@
                         </p>
                     </div>
 
-                </div>
-
+               <!--  </div>
+ -->
 
             </div>
             {% endfor %}

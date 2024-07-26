@@ -21,6 +21,9 @@ def indice(request):
 def acerca(request):
     return render(request, 'about.html', {})
 
+def ubicacion(request):
+    return render(request, 'ubicacion.html', {})
+
 @login_required
 def bienvenido(request):
     private_flans = Flan.objects.filter(is_private=True)    
