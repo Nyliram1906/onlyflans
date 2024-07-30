@@ -19,3 +19,13 @@ class ContactForm(models.Model):
     customer_name = models.CharField(max_length=64)
     message = models.TextField()
 
+class OtherProduct(models.Model):
+    product_uuid = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+    name = models.CharField(max_length=64)
+    description = models.TextField()
+    image_url = models.URLField()
+    slug = models.SlugField(unique=True)
+    is_private = models.BooleanField(default=False)
+
+    def __str(self):
+        return self.name

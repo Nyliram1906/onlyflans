@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bienvenido cliente</title>
-</head>
-
-<body>
     {% extends 'base.html' %}
 
     {% block 'content' %}
-    <div class="container">
+   
 
         <div class="row">
             <div class="col">
@@ -28,36 +19,51 @@
                     </a>
                 </div>
             </div>
-        </div>
+    
 
-    <div class="container">
+   <!--  <div class="container"> -->
 
-        <div class="row mt-4 mb-4">
-            {% for flan in private_flans %}
-            <!-- <div class="col-6 col-md-3"> -->
-                <div class="card mb-2" style="width: 18rem;">
-                    <img src="{{ flan.image_url }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            {{ flan.name }}
-                        </h5>
-                        <p class="card text">
-                            {{ flan.description }}
-                        </p>
-                    </div>
+    <div class="row mt-4 mb-4">
 
-               <!--  </div>
- -->
+        {% for flan in private_flans %}
+        <div class="col-6 col-md-3">
+            <div class="card m-2">
+                <img src="{{ flan.image_url }}" class="card-img-top" height="300" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        {{ flan.name }}
+                    </h5>
+                    <p style="display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 5; overflow: hidden;">
+                        {{ flan.description }}
+                    </p>
 
+                </div>
             </div>
-            {% endfor %}
         </div>
-
-
+        {% endfor %}
     </div>
+</div>
+<!-- Fin flanes -->
+<div class="row mt-4 mb-4">
+<div class="row mt-4">
+<h3 class="text-center w-100">Otros productos de nuestra tienda</h3>
+<!-- Sección de Otros Productos -->
+{% for product in other_products %}
+<div class="col-6 col-md-3">
+    <div class="card m-2">
+        <img src="{{ product.image_url }}" class="card-img-top" height="300" alt="{{ product.name }}">
+        <div class="card-body">
+            <h5 class="card-title">
+                {{ product.name }}
+            </h5>
+            <p style="display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 5; overflow: hidden;">
+                {{ product.description }}
+            </p>
+        </div>
+    </div>
+</div>
+{% endfor %}
+</div>
+</div>
 
-    {% endblock %}
-
-</body>
-
-</html>
+{% endblock %}

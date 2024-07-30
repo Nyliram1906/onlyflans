@@ -1,26 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>acerca</title>
-</head>
-<body>
-    {% extends 'base.html' %}
+{% extends 'base.html' %}
 
 {% block 'content' %}
+
+
 <div class="container">
     <div class="container">
         <h1>OnlyFlans: La Boutique del Flan Perfecto</h1>
         <p class="lead">Descubre los flanes más deliciosos y variados de la ciudad</p>
     </div>
 
-<section class="py-5">
+<section class="bg-light py-5">
     <div class="container">
         <h2>Nuestra Historia</h2>
         <p>OnlyFlans nació del sueño de dos amigos apasionados por la repostería y el buen gusto. Fundada en 2015, nuestra tienda ha crecido rápidamente gracias a la devoción por la calidad y la innovación en cada uno de nuestros productos. Desde nuestros humildes comienzos, hemos trabajado incansablemente para crear un espacio donde la tradición y la creatividad se encuentran en cada bocado.</p>
     </div>
 </section>
+<!-- imagen -->
+ {% load static %}
+<div class="container">
+    <div class="col-4 offset-4 text" >
+        <img src="{% static 'tienda.jpg' %}" alt="logo" class="img-fluid mt-4 mb-4">      
+    </div>
+</div>
 
 <section class="py-5">
     <div class="container">
@@ -45,5 +46,3 @@
     </div> 
 {% endblock %}
 
-</body>
-</html>
